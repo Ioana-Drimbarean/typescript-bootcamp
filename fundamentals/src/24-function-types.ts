@@ -1,28 +1,33 @@
-
 interface Course {
-    title:string;
-    subtitle: string;
-    lessonsCount:number;
+  title: string;
+  subtitle: string;
+  lessonsCount: number;
 }
 
-type CreateCourse = (title:string, subtitle:string, lessonsCount:number) => Course;
+type CreateCourse = (
+  title: string,
+  subtitle: string,
+  lessonsCount: number
+) => Course;
 
 type OnCourseCreated = (course: Course) => void;
-
-const createCourse = (title:string, subtitle:string,
-                      lessonsCount:number, callback: OnCourseCreated) => {
-
-    console.log(` Creating course with Title: ${title}, 
+// Usually we use function types when working with callbacks: callback: OnCourseCreated
+const createCourse = (
+  title: string,
+  subtitle: string,
+  lessonsCount: number,
+  callback: OnCourseCreated
+) => {
+  console.log(` Creating course with Title: ${title}, 
     Subtitle: ${subtitle} lessons count: ${lessonsCount}`);
 
-    const course = {
-        title,
-        subtitle,
-        lessonsCount
-    };
+  const course = {
+    title,
+    subtitle,
+    lessonsCount,
+  };
 
-    callback(course);
+  callback(course);
 
-    return course;
-}
-
+  return course;
+};

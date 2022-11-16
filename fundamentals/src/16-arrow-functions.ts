@@ -1,16 +1,12 @@
-
 function saveCourse(course, callback: Function) {
+  this.course = course;
 
-    this.course = course;
-
-    setTimeout(() => {
-
-        callback(this.course?.title ?? "unknown course");
-
-    }, 1000);
-
+  setTimeout(() => {
+    // if we use function () => new this context will be created
+    callback(this.course?.title ?? 'unknown course');
+  }, 1000);
 }
 
-const cb = (title:string) => console.log("Save successful.", title);
+const cb = (title: string) => console.log('Save successful.', title);
 
-saveCourse({title:"Typescript Bootcamp"}, cb);
+saveCourse({ title: 'Typescript Bootcamp' }, cb);
