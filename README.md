@@ -6,13 +6,13 @@ This repository contains the code of the [Typescript: The Ultimate Bootcamp](htt
 
 You can find the starting point of the course in the [1-start branch](https://github.com/angular-university/typescript-bootcamp/tree/1-start).
 
-This master branch contains the *final version of the course code*, that you can use as a reference if you choose to code along.
+This master branch contains the _final version of the course code_, that you can use as a reference if you choose to code along.
 
 # Installation pre-requisites
 
 IMPORTANT: Please install Node 16 LST (Long Term Support version).
 
-# Other Courses from the Angular University 
+# Other Courses from the Angular University
 
 # Angular Forms In Depth
 
@@ -31,7 +31,6 @@ If you are looking for the [Angular Router In Depth](https://angular-university.
 If you are looking for the [Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.io/course/ngrx-course), the repo with the full code can be found here:
 
 ![Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.s3-us-west-1.amazonaws.com/course-images/ngrx-v2.png)
-
 
 # Angular Core Deep Dive Course
 
@@ -91,7 +90,6 @@ If you are looking for the Angular Advanced Course, the repo with the full code 
 
 ![Angular Advanced Library Laboratory Course: Build Your Own Library](https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png)
 
-
 ## RxJs and Reactive Patterns Angular Architecture Course
 
 If you are looking for the RxJs and Reactive Patterns Angular Architecture Course code, the repo with the full code can be found here:
@@ -100,9 +98,17 @@ If you are looking for the RxJs and Reactive Patterns Angular Architecture Cours
 
 ![RxJs and Reactive Patterns Angular Architecture Course](https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png)
 
+tsc <file-name.ts>
+tsc --noEmitOnError <file-name.ts> => wont generate the associated js file
+tsc --watch --noEmitOnError --noImplicitAny --strictNullChecks <file-name.ts>
+--noImplicitAny => no implicit any (eg for functions params)
+--strictNullChecks => no implicit null/undefined for types
+--noEmitOnError => wont generate the associated js file in case of an error
+--sourceMap
+npm init => to generate the package file
+npm i lite-server => the server that we will use to test changes into the browser
 
-
-
-
-
-
+https://angular-university.io/lesson/typescript-bootcamp-debugging-typescript-in-node
+VS code debugging: https://github.com/Microsoft/nodejstools/wiki/Debugging
+node --inspect <file-name.js> => run the js file using node
+--inspect-brk
