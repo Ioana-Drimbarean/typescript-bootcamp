@@ -11,8 +11,10 @@ const course: unknown = {
 };
 
 if (isCourse(course)) {
+  console.log("Type", course, typeof course);
 }
 
+// Return a type predicate: value is Course
 function isCourse(value: unknown): value is Course {
   const course = value as Course;
 

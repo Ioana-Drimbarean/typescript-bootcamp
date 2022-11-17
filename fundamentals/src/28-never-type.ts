@@ -1,8 +1,8 @@
 
 let anyValue:any;
 
-//let neverValue : never = undefined;
-
+// can't assign anything to a variable that is defined as being typed <never>
+//let neverValue : never = anyValue; //any, uknown, number, string, booleans, object
 //neverValue["property"] = 10;
 
 type CourseStatus = "draft" | "published" | "unpublished";
