@@ -1,10 +1,11 @@
+// Ussually better use custom type/interface type
 interface Course {
   title: string;
   subtitle: string;
   lessonsCount: number;
 }
-
-type CourseRecord = [string, string, number];
+// Tuple type
+type CourseRecord = [string, string, number?];
 
 const courseRecord: CourseRecord = [
   'Typescript Bootcamp',
