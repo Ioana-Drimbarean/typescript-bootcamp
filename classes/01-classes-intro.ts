@@ -1,12 +1,12 @@
 import {HasId, HasTitle} from "./02-interfaces";
 import {CoursesService} from "./03-singleton";
 
+// this - the context of the associated object
 abstract class Course implements HasTitle {
-
     private static TOTAL_COURSES = 0;
+    static readonly TYPESCRIPT_TITLE = "Typescript Bootcamp"; // define a constant
 
-    static readonly TYPESCRIPT_TITLE = "Typescript Bootcamp";
-
+    // no need for multiple constructors in TS
     protected constructor(
         public id:string,
         protected _title:string,
@@ -16,11 +16,8 @@ abstract class Course implements HasTitle {
     ) {
 
         this.validate();
-
         const service = CoursesService.instance();
-
         Course.TOTAL_COURSES++;
-
     }
 
     printId() {
@@ -41,14 +38,14 @@ abstract class Course implements HasTitle {
         if (!newTitle) {
             throw "Title cannot be empty";
         }
-
         this._title = newTitle;
     }
 
+    // getter  (new Course).age <=> no getter (new Course).age()
     get age() {
         const ageInMs = new Date().getTime() - this.creationDt.getTime();
-
         return Math.round(ageInMs / 1000 / 60 / 24);
+        //setTimeout(() { this. // will contain the context of the class object})
     }
 
 }
@@ -59,7 +56,6 @@ class FreeCourse extends Course {
                  title:string,
                  subtitle = "",
                  creationDt = new Date(2000,1,1)) {
-
         super(id, title, 0, subtitle, creationDt);
 
     }
@@ -75,9 +71,7 @@ class FreeCourse extends Course {
 //console.log(typescript.title);
 
 const angular = new FreeCourse("1", "Angular For Beginners");
-
 CoursesService.instance();
-
 console.log(angular);
 
 

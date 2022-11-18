@@ -3,7 +3,7 @@ export class CoursesService {
 
     private static INSTANCE: CoursesService;
 
-    private constructor() {
+    protected constructor() {
         console.log(`The CoursesService was initialized.`);
     }
 
@@ -15,4 +15,3 @@ export class CoursesService {
     }
 
 }
-
