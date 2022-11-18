@@ -105,10 +105,45 @@ tsc --watch --noEmitOnError --noImplicitAny --strictNullChecks <file-name.ts>
 --strictNullChecks => no implicit null/undefined for types
 --noEmitOnError => wont generate the associated js file in case of an error
 --sourceMap
+--project custon-tsconfig.json (default configs that can be overriden by the params defined in the comment line)
+--target
 npm init => to generate the package file
 npm i lite-server => the server that we will use to test changes into the browser
+npm i express
+npm i -D @types/express => needed to resolve express lib typing when importen in our app
 
 https://angular-university.io/lesson/typescript-bootcamp-debugging-typescript-in-node
 VS code debugging: https://github.com/Microsoft/nodejstools/wiki/Debugging
 node --inspect <file-name.js> => run the js file using node
 --inspect-brk
+
+ts config file
+{
+  "compilerOptions": {
+    "target": "es5", // JS version
+    "rootDir": "src", //source dir
+    "outDir": "dist", //output dir
+    "module": "CommonJS", // define a module syntax for the ts compiler
+    "baseUrl": "src", // the folder where the imports are pointing
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "noLib": false,
+    "lib": [], // what libs to include into the compilation prosess
+    "typeRoots": [....],
+    "types": [], // if there are any issues with this resource the compilation will fail
+    "allowJS": ... // recognize JS files as valid imports / checkJS
+    "noEmit": 
+    "noEmitOnError": true,
+    "strictNullChecks": true,
+    "removeComments": true
+
+  },
+  "include":[
+    "src/**/*" // patherns
+  ],
+  //exclude
+  // Add the main entries for your app => usualy all dependencies are in the end processed due to dep tree chain
+  "files": [
+    "src/01-why-typescript.ts"
+  ]
+}
