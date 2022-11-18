@@ -4,8 +4,14 @@ interface Course {
     subtitle:string;
     lessonsCount: number;
 }
+//with Readonly <=>Fextends
+interface ImmutableCourse {
+    readonly title:string;
+    readonly subtitle:string;
+    readonly lessonsCount: number;
+}
 
-function freezeCourse(course:Course): Readonly<Course> {
+function freezeCourse(course:Course): Readonly<Course>|ImmutableCourse {
     return Object.freeze(course);
 }
 

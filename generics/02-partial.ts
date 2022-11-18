@@ -7,7 +7,6 @@ export interface Course {
 
 export function updateCourse(
     courseId:string, update: Partial<Course>) {
-
 }
 
 updateCourse("1", {

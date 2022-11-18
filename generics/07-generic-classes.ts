@@ -1,4 +1,4 @@
-
+// class KeyValue<K, V> => add generic type to class => K, V are automaticaly infered
 class KeyValue<K, V> {
 
     constructor(
@@ -11,12 +11,10 @@ class KeyValue<K, V> {
     }
 }
 
+//const p1 = new KeyValue<string, number>("1", 10); => no need to specify the types
 const p1 = new KeyValue("1", 10);
-
 const val1 = p1.value;
-
 const p2 = new KeyValue(2, "Hello World");
-
 const val2 = p2.value;
 
 const course: Course = {
@@ -26,5 +24,4 @@ const course: Course = {
 }
 
 const p3 = new KeyValue("3", course);
-
 const val3 = p3.value;
